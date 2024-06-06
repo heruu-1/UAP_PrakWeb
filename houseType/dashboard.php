@@ -13,14 +13,15 @@ if(isset($_POST["cari"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Tipe Rumah</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="body">
-    <h1 class="h1">Daftar User</h1>
+    <h1 class="h1">Kategori</h1>
     <form action="" method="post" class="form">
-        <input type="text" name="keyword" size="40" autofocus placeholder="Masukkan keyword" autocomplete="off" class="input">
+        <input type="text" name="keyword" size="40" autofocus placeholder="Masukkan keyword" autocomplete="off"
+            class="input">
         <button type="submit" name="cari" class="button">Cari!</button>
         <br><br>
         <a href="add.php">Tambah User</a>
@@ -43,8 +44,9 @@ if(isset($_POST["cari"])){
             <td><?php echo $user['no_hp']; ?></td>
             <td>
                 <button><a href="edit.php?id=<?php echo $user['id']; ?>">Edit</a></button>
-                <button><a href="delete.php?id=<?php echo $user['id']; ?>" onclick="return confirm('Yakin ingin menghapus?');">Delete</a>
-            </button>
+                <button><a href="delete.php?id=<?php echo $user['id']; ?>"
+                        onclick="return confirm('Yakin ingin menghapus?');">Delete</a>
+                </button>
             </td>
         </tr>
         <?php $i++; ?>
