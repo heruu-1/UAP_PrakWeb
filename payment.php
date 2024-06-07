@@ -1,4 +1,4 @@
-<?php include_once 'helpers/helper.php'; ?><!-- log on to codeastro.com for more projects -->
+<?php include_once 'helpers/helper.php'; ?>
 <?php subview('header.php'); ?>
 <link rel="stylesheet" href="assets/css/form.css">
 <style>
@@ -105,7 +105,7 @@ input[type=number]:focus,
               <i class="fa fa-cc-discover fa-3x" style="color:orange;"></i>
                <i class="fa fa-cc-stripe fa-3x" style="color:blue;"></i>
             </div>
-            <hr><!-- log on to codeastro.com for more projects -->
+            <hr>
             <form action="includes/payment.inc.php" method="post" 
                 novalidate="novalidate" class="needs-validation">
   
@@ -127,10 +127,10 @@ input[type=number]:focus,
                         <div class="row">
                             <div class="col pr-0">
                                 <input id="x_card_code" name="x_card_code" type="password" class="form-control cc-cvc" required autocomplete="off">
-                            </div><!-- log on to codeastro.com for more projects -->
+                            </div>
                             <div class="col pr-0">                            
                                 <span class="invalid-feedback order-last">Enter the 3-digit code on back</span>
-                                <div class="input-group-append"><!-- log on to codeastro.com for more projects -->
+                                <div class="input-group-append">
                                     <div class="input-group-text">
                                     <span class="fa fa-question-circle fa-lg" data-toggle="popover" data-container="body" data-html="true" data-title="CVV" 
                                     data-content="<div class='text-center one-card'>The 3 digit code on back of the card..<div class='visa-mc-cvc-preview'></div></div>"
@@ -144,7 +144,7 @@ input[type=number]:focus,
                 
                 <br/>
 
-                <div class='form-row'><!-- log on to codeastro.com for more projects -->
+                <div class='form-row'>
                 <div class='col-md-12 mb-2'>
                     <button id="payment-button" type="submit"  name="pay_but"
                     class="btn btn-lg btn-primary btn-block">

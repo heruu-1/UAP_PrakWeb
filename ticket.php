@@ -1,4 +1,4 @@
-<?php include_once 'helpers/helper.php'; ?><!-- log on to codeastro.com for more projects -->
+<?php include_once 'helpers/helper.php'; ?>
 <?php subview('header.php'); ?>
 <style>
 body {
@@ -66,7 +66,7 @@ h1 {
     font-weight: bolder;
   }
 </style>
-<main><!-- log on to codeastro.com for more projects -->
+<main>
   <?php if(isset($_SESSION['userId'])) {   
     require 'helpers/init_conn_db.php';   
     
@@ -274,6 +274,6 @@ h1 {
        ?> 
 
     </div>
-  </main><!-- log on to codeastro.com for more projects -->
+  </main>
   <?php } ?>
   <?php subview('footer.php'); ?> 

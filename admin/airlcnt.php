@@ -10,4 +10,4 @@ $sql = "SELECT * FROM airline";
                 $query = $conn->query($sql);
 
                 echo "$query->num_rows";
-?><!-- Visit codeastro.com for more projects -->
+?>

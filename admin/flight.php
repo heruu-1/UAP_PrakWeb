@@ -1,4 +1,4 @@
-<?php include_once 'header.php'; ?><!-- log on to codeastro.com for more projects -->
+<?php include_once 'header.php'; ?>
 <?php include_once 'footer.php'; ?>
 <?php require '../helpers/init_conn_db.php'; ?>
 
@@ -80,7 +80,7 @@
           echo "<script>alert('Same city specified in source and destination');</script>";
         }
     }
-    ?><!-- log on to codeastro.com for more projects -->
+    ?>
       <div class="bg-light form-out col-md-12">
       <h1 class="text-secondary text-center">ADD FLIGHT DETAILS</h1>
 
@@ -91,7 +91,7 @@
           <div class="col-md-3 p-0">
             <h5 class="mb-0 form-name">DEPARTURE</h5>
           </div>
-          <div class="col">    <!-- log on to codeastro.com for more projects -->       
+          <div class="col">           
             <input type="date" name = "source_date" class="form-control"
             required >
           </div>

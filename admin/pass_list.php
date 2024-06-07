@@ -1,7 +1,7 @@
-<?php include_once 'header.php'; ?><!-- log on to codeastro.com for more projects -->
+<?php include_once 'header.php'; ?>
 <?php include_once 'footer.php';
 require '../helpers/init_conn_db.php';?>
-<style><!-- log on to codeastro.com for more projects -->
+<style>
 table {
   background-color: white;
 }
@@ -35,7 +35,7 @@ td {
             <table class="table table-bordered">
               <thead class="thead-dark">
                 <tr>
-                  <th>#</th><!-- log on to codeastro.com for more projects -->
+                  <th>#</th>
                   <th scope="col">First Name</th>
                   <th scope="col">Middle Name</th>
                   <th scope="col">Last Name</th>
@@ -107,4 +107,4 @@ td {
           </div>
         <?php } ?>
 
-    </main><!-- log on to codeastro.com for more projects -->
+    </main>

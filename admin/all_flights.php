@@ -1,4 +1,4 @@
-<?php include_once 'header.php'; ?><!-- log on to codeastro.com for more projects -->
+<?php include_once 'header.php'; ?>
 <?php include_once 'footer.php';
 require '../helpers/init_conn_db.php';?>
 <?php
@@ -20,58 +20,62 @@ if(isset($_POST['del_flight']) and isset($_SESSION['adminId'])) {
   }
 }
 ?>
-<!-- log on to codeastro.com for more projects -->
+
 <style>
 table {
-  background-color: white;
+    background-color: white;
 }
+
 h1 {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-family: 'product sans';  
-  font-size: 45px !important; 
-  font-weight: lighter;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'product sans';
+    font-size: 45px !important;
+    font-weight: lighter;
 }
+
 a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 body {
-  /* background-color: #B0E2FF; */
-  background-color: #efefef;
+    /* background-color: #B0E2FF; */
+    background-color: #efefef;
 }
+
 th {
-  font-size: 22px;
-  /* font-weight: lighter; */
-  /* font-family: 'Courier New', Courier, monospace; */
+    font-size: 22px;
+    /* font-weight: lighter; */
+    /* font-family: 'Courier New', Courier, monospace; */
 }
+
 td {
-  margin-top: 10px !important;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: 'Assistant', sans-serif !important;
+    margin-top: 10px !important;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Assistant', sans-serif !important;
 }
 </style>
-    <main>
-        <?php if(isset($_SESSION['adminId'])) { ?>
-          <div class="container-md mt-2">
-            <h1 class="display-4 text-center text-secondary"
-              >FLIGHT LIST</h1>
-            <table class="table table-bordered">
-              <thead class="table-dark">
-                <tr><!-- log on to codeastro.com for more projects -->
-                  <th scope="col">ID</th>
-                  <th scope="col">Arrival</th>
-                  <th scope="col">Departure</th>
-                  <th scope="col">Source</th>
-                  <th scope="col">Destination</th>
-                  <th scope="col">Airline</th>
-                  <th scope="col">Seats</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Action</th>
+<main>
+    <?php if(isset($_SESSION['adminId'])) { ?>
+    <div class="container-md mt-2">
+        <h1 class="display-4 text-center text-secondary">FLIGHT LIST</h1>
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Arrival</th>
+                    <th scope="col">Departure</th>
+                    <th scope="col">Source</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Airline</th>
+                    <th scope="col">Seats</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Action</th>
                 </tr>
-              </thead>
-              <tbody>
-                
+            </thead>
+            <tbody>
+
                 <?php
                 $sql = 'SELECT * FROM Flight ORDER BY flight_id DESC';
                 $stmt = mysqli_stmt_init($conn);
@@ -103,11 +107,10 @@ td {
                 }
                 ?>
 
-              </tbody>
-            </table>
+            </tbody>
+        </table>
 
-          </div>
-        <?php } ?>
+    </div>
+    <?php } ?>
 
-    </main>
-	<!-- log on to codeastro.com for more projects -->
+</main>
