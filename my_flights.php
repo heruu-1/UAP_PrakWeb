@@ -1,5 +1,4 @@
 <?php include_once 'helpers/helper.php'; ?>
-<!-- log on to codeastro.com for more projects -->
 <?php subview('header.php'); ?>
 <?php if(isset($_SESSION['userId'])) {   
     require 'helpers/init_conn_db.php';                      
@@ -58,7 +57,7 @@ h1 {
   }
 
 </style>
-<main><!-- log on to codeastro.com for more projects -->
+<main
     <div class="container">
     <h1 class="text-center text-light mt-4 mb-4">FLIGHT STATUS</h1>
     <?php 
