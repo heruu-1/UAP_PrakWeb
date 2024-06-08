@@ -91,7 +91,7 @@ td {
                                 <td>".$row['mobile']."</td>
                                 <td>".$row['dob']."</td>
                                 <td scope='row'>".$row_u['username']."</td>
-                                <td>$ ".$row_p['amount']."</td>
+                                <td>Rp".number_format($row_p['amount'], 0, ',', '.') . ',00'."</td>
                               </tr>
                               "; 
                             }                       

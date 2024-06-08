@@ -116,7 +116,7 @@ td {
                           </div>
                       </div>  
                     </td>                   
-                    <td>$ ".$price."</td>
+                    <td>Rp" . number_format($row['Price'], 0, ',', '.') . "</td>
                     ";
                   if(isset($_SESSION['userId']) && $row['status'] === '') {   
                     echo " <td>
