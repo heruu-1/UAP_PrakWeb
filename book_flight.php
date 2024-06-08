@@ -1,43 +1,51 @@
 <?php include_once 'helpers/helper.php'; ?>
 <?php subview('header.php'); 
 require 'helpers/init_conn_db.php';                      
-?> 	
+?>
 <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200&display=swap" rel="stylesheet">
 <style>
 table {
-  background-color: white;
+    background-color: white;
 }
+
 @font-face {
-  font-family: 'product sans';
-  src: url('assets/css/Product Sans Bold.ttf');
+    font-family: 'product sans';
+    src: url('assets/css/Product Sans Bold.ttf');
 }
-h1{
-    font-family :'product sans' !important;
-	color:#424242 ;
-	font-size:40px !important;
-	margin-top:20px;
-	text-align:center;
+
+h1 {
+    font-family: 'product sans' !important;
+    color: #424242;
+    font-size: 40px !important;
+    margin-top: 20px;
+    text-align: center;
 }
+
 body {
-  background: #bdc3c7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #bdc3c7;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2c3e50, #bdc3c7);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
+
 th {
-  font-size: 22px;
-  /* font-family: 'Courier New', Courier, monospace; */
+    font-size: 22px;
+    /* font-family: 'Courier New', Courier, monospace; */
 }
+
 td {
-  margin-top: 10px !important;
-  font-size: 16px;
-  font-weight: bold;
-  /* color: #3931af; */
-  color: #424242;
+    margin-top: 10px !important;
+    font-size: 16px;
+    font-weight: bold;
+    /* color: #3931af; */
+    color: #424242;
 }
 </style>
-    <main>
-        <?php if(isset($_POST['search_but'])) { 
+<main>
+    <?php if(isset($_POST['search_but'])) { 
             $dep_date = $_POST['dep_date'];                        
             $ret_date = $_POST['ret_date'];  
             $dep_city = $_POST['dep_city'];  
@@ -58,22 +66,21 @@ td {
               exit();              
             }
             ?>
-          <div class="container-md mt-2">
-            <h1 class="display-4 text-center text-light"
-              >FLIGHTS FROM: <br> <?php echo $dep_city; ?> 
-                 to <?php echo $arr_city; ?> </h1>
-            <table class="table table-striped table-bordered table-hover">
-              <thead>
+    <div class="container-md mt-2">
+        <h1 class="display-4 text-center text-light">FLIGHTS FROM: <br> <?php echo $dep_city; ?>
+            to <?php echo $arr_city; ?> </h1>
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
                 <tr class="text-center">
-                  <th scope="col">Airline</th>
-                  <th scope="col">Departure</th>
-                  <th scope="col">Arrival</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Fare</th>
-                  <th scope="col">Buy</th>
+                    <th scope="col">Airline</th>
+                    <th scope="col">Departure</th>
+                    <th scope="col">Arrival</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Fare</th>
+                    <th scope="col">Buy</th>
                 </tr>
-              </thead>
-              <tbody>
+            </thead>
+            <tbody>
                 <?php
                 $sql = 'SELECT * FROM Flight WHERE source=? AND Destination =? AND 
                     DATE(departure)=? ORDER BY Price';
@@ -116,7 +123,7 @@ td {
                           </div>
                       </div>  
                     </td>                   
-                    <td>Rp" . number_format($row['Price'], 0, ',', '.') . "</td>
+                    <td>Rp.".$price."</td>
                     ";
                   if(isset($_SESSION['userId']) && $row['status'] === '') {   
                     echo " <td>
@@ -145,22 +152,24 @@ td {
                 }
                 ?>
 
-              </tbody>
-            </table>
+            </tbody>
+        </table>
 
-          </div>
-        <?php } ?>
+    </div>
+    <?php } ?>
 
-    </main>
-    <?php subview('footer.php'); ?> 
-    <footer style="
+</main>
+<?php subview('footer.php'); ?>
+<footer style="
         position: absolute;
       bottom: 0;
       width: 100%;
       height: 2.5rem;  
     ">
-	<em><h5 class="text-light text-center p-0 brand mt-2">
-				<img src="assets/images/airtic.png" 
-					height="40px" width="40px" alt="">				
-			Online Flight Booking</h5></em>
+    <em>
+        <h5 class="text-light text-center p-0 brand mt-2">
+            <img src="assets/images/airtic.png" height="40px" width="40px" alt="">
+            Online Flight Booking
+        </h5>
+    </em>
 </footer>
