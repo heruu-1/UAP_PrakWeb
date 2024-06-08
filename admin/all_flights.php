@@ -152,7 +152,7 @@ td {
                         <td>" . $row['Destination'] . "</td>
                         <td>" . $row['airline'] . "</td>
                         <td>" . $row['Seats'] . "</td>
-                        <td>$" . $row['Price'] . "</td>
+                        <td>Rp" . number_format($row['Price'], 0, ',', '.') . "</td>
                         <td>
                             <form action='all_flights.php' method='post' style='display:inline-block;'>
                                 <input name='flight_id' type='hidden' value=" . $row['flight_id'] . ">
