@@ -11,4 +11,4 @@ $sql = "SELECT SUM(cost) FROM ticket";
         $row_amountsum = mysqli_fetch_assoc($amountsum);
         $totalRows_amountsum = mysqli_num_rows($amountsum);
         echo $row_amountsum['SUM(cost)'];
-?><!-- Visit codeastro.com for more projects -->
+?>
