@@ -21,7 +21,7 @@ if (isset($_POST['del_admins']) && isset($_SESSION['adminId'])) {
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
-        echo("<script>location.href = 'manageadmin.php';</script>");
+        echo("<script>location.href = 'manage_user.php';</script>");
         exit();
     }
 }
@@ -46,7 +46,7 @@ if (isset($_POST['update_admins']) && isset($_SESSION['adminId'])) {
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
-        echo("<script>location.href = 'manageadmin.php';</script>");
+        echo("<script>location.href = 'manage_user.php';</script>");
         exit();
     }
 }
@@ -71,7 +71,7 @@ if (isset($_POST['add_admins']) && isset($_SESSION['adminId'])) {
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
-        echo("<script>location.href = 'manageadmin.php';</script>");
+        echo("<script>location.href = 'manage_user.php';</script>");
         exit();
     }
 }
@@ -181,7 +181,7 @@ td {
                         <td>".$row['email']."</td>
                         <td>".$row['role']."</td>
                         <td>
-                            <form action='manageadmin.php' method='post' style='display:inline-block;'>
+                            <form action='manage_user.php' method='post' style='display:inline-block;'>
                                 <input name='id' type='hidden' value='".$row['id']."'>
                                 <input name='role' type='hidden' value='".$row['role']."'>
                                 <button class='btn' type='submit' name='del_admins'>
@@ -205,7 +205,7 @@ td {
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h1 class="display-4 text-center text-secondary">UPDATE</h1>
-                <form action="manageadmin.php" method="post">
+                <form action="manage_user.php" method="post">
                     <input type="hidden" name="id" id="update_id">
                     <input type="hidden" name="role" id="update_role">
                     <div class="form-group">
@@ -226,7 +226,7 @@ td {
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h1 class="display-4 text-center text-secondary">ADD ADMIN/USER</h1>
-                <form action="manageadmin.php" method="post">
+                <form action="manage_user.php" method="post">
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" class="form-control" name="username" id="add_username" required>
