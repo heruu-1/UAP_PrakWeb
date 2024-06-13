@@ -83,7 +83,7 @@ h4 {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="manageus.php">
+                    <a class="nav-link" href="manage_user.php">
                         <h5>Manage Users</h5>
                     </a>
                 </li>

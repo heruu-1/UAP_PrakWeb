@@ -160,6 +160,7 @@ td {
         <div id="updateModal" class="modal">
           <div class="modal-content">
             <span class="close">&times;</span>
+            <h1 class="display-4 text-center text-secondary">UPDATE AIRLINE</h1>
             <form action="list_airlines.php" method="post">
               <input type="hidden" name="airline_id" id="update_airline_id">
               <div class="form-group">
