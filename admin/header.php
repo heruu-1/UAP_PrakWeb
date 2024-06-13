@@ -78,8 +78,8 @@ h4 {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="booked.php">
-                        <h5>Booked</h5>
+                    <a class="nav-link" href="cities.php">
+                        <h5>Cities</h5>
                     </a>
                 </li>
                 <li class="nav-item">
