@@ -78,6 +78,11 @@ h4 {
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="booked.php">
+                        <h5>Booked</h5>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="manageus.php">
                         <h5>Manage Users</h5>
                     </a>
