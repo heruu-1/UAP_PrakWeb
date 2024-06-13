@@ -16,7 +16,7 @@ if (isset($_POST['del_city']) && isset($_SESSION['adminId'])) {
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
-        echo("<script>location.href = 'list_cities.php';</script>");
+        echo("<script>location.href = 'cities.php';</script>");
         exit();
     }
 }
@@ -35,7 +35,7 @@ if (isset($_POST['update_city']) && isset($_SESSION['adminId'])) {
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
-        echo("<script>location.href = 'list_cities.php';</script>");
+        echo("<script>location.href = 'cities.php';</script>");
         exit();
     }
 }
@@ -53,7 +53,7 @@ if (isset($_POST['add_city']) && isset($_SESSION['adminId'])) {
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
-        echo("<script>location.href = 'list_cities.php';</script>");
+        echo("<script>location.href = 'cities.php';</script>");
         exit();
     }
 }
@@ -134,7 +134,7 @@ td {
         <h1 class="display-4 text-center text-secondary">CITIES LIST</h1>
         
         <!-- Add City Form -->
-        <form action="list_cities.php" method="post" class="mb-4">
+        <form action="cities.php" method="post" class="mb-4">
           <div class="form-group">
             <label for="new_city">Add New City</label>
             <input type="text" class="form-control" name="new_city" id="new_city" required>
@@ -184,7 +184,7 @@ td {
                     <td scope='row'>".$cnt."</td>
                     <td>".$row['city']."</td>
                     <td>
-                    <form action='list_cities.php' method='post' style='display:inline-block;'>
+                    <form action='cities.php' method='post' style='display:inline-block;'>
                       <input name='city' type='hidden' value='".$row['city']."'>
                       <button class='btn' type='submit' name='del_city'>
                       <i class='text-danger fa fa-trash'></i></button>
@@ -209,7 +209,7 @@ td {
           <div class="modal-content">
             <span class="close">&times;</span>
             <h1 class="display-4 text-center text-secondary">UPDATE CITY</h1>
-            <form action="list_cities.php" method="post">
+            <form action="cities.php" method="post">
               <input type="hidden" name="old_city" id="update_old_city">
               <div class="form-group">
                 <label for="new_city">City</label>
