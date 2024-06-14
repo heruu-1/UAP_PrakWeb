@@ -84,7 +84,7 @@ h5 {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="about.php">
                         <h5> About</h5>
                     </a>
                 </li>

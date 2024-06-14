@@ -77,8 +77,6 @@ if (isset($_POST['add_admins']) && isset($_SESSION['adminId'])) {
 }
 ?>
 
-
-
 <style>
 table {
   background-color: white;
@@ -152,19 +150,34 @@ td {
     <div class="container-md mt-2">
         <h1 class="display-4 text-center text-secondary">USERS</h1>
         <button class="btn btn-success mb-2" type="button" onclick="openAddModal()">Add Admin/User</button>
+        <div class="d-flex justify-content-between mb-3">
+            <div>
+                <label>Show 
+                    <select id="entries" class="custom-select" style="width: auto;">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select> entries
+                </label>
+            </div>
+            <div>
+                <label>Search:
+                    <input type="text" id="search" class="form-control" style="display: inline-block; width: auto;">
+                </label>
+            </div>
+        </div>
         <table class="table table-bordered">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">ID</th>
                     <th scope="col">Username</th>
                     <th scope="col">Email</th>
                     <th scope="col">Role</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="userTable">
                 <?php
-                $cnt = 1;
                 $sql = '(SELECT admin_id AS id, admin_uname AS username, admin_email AS email, "admin" AS role FROM admin)
                         UNION
                         (SELECT user_id AS id, username, email, "user" AS role FROM users)
@@ -176,7 +189,6 @@ td {
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "
                     <tr class='text-center'>
-                        <td scope='row'>".$cnt."</td>
                         <td>".$row['username']."</td>
                         <td>".$row['email']."</td>
                         <td>".$row['role']."</td>
@@ -194,7 +206,6 @@ td {
                         </td>
                     </tr>
                     ";
-                    $cnt++;
                 }
                 ?>
             </tbody>
@@ -281,4 +292,38 @@ window.onclick = function(event) {
         document.getElementById('addModal').style.display = "none";
     }
 }
+
+// Live Search Functionality
+document.getElementById('search').addEventListener('keyup', function() {
+  filterTable();
+});
+
+// Entries Display Functionality
+document.getElementById('entries').addEventListener('change', function() {
+  filterTable();
+});
+
+function filterTable() {
+  const searchValue = document.getElementById('search').value.toLowerCase();
+  const entriesValue = parseInt(document.getElementById('entries').value);
+  const rows = document.querySelectorAll('#userTable tr');
+  let displayedCount = 0;
+
+  rows.forEach(function(row) {
+    const username = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+    if (username.indexOf(searchValue) > -1) {
+      if (displayedCount < entriesValue) {
+        row.style.display = '';
+        displayedCount++;
+      } else {
+        row.style.display = 'none';
+      }
+    } else {
+      row.style.display = 'none';
+    }
+  });
+}
+
+// Initialize display
+document.getElementById('entries').dispatchEvent(new Event('change'));
 </script>
