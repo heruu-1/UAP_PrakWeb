@@ -119,6 +119,7 @@ td {
     <?php if (isset($_SESSION['adminId'])) { ?>
     <div class="container-md mt-2">
         <h1 class="display-4 text-center text-secondary">FLIGHT LIST</h1>
+        <button class="btn btn-success mb-2" type="button" onclick="window.location.href='flight.php'">Add Flight</button>
         <table class="table table-bordered">
             <thead class="table-dark">
                 <tr>

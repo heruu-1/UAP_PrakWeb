@@ -150,7 +150,7 @@ td {
 
 <main>
     <div class="container-md mt-2">
-        <h1 class="display-4 text-center text-secondary">ADMIN LIST</h1>
+        <h1 class="display-4 text-center text-secondary">USERS</h1>
         <button class="btn btn-success mb-2" type="button" onclick="openAddModal()">Add Admin/User</button>
         <table class="table table-bordered">
             <thead class="table-dark">

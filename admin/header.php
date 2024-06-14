@@ -63,11 +63,6 @@ h4 {
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="flight.php">
-                        <h5 class="ml-2"> Add Flight</h5>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="all_flights.php">
                         <h5>List Flights</h5>
                     </a>
